@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    {% if symbol_result %}
+        <h3>
+            {{ symbol_result }}
+        </h3>
+    {% else %}
+
+        <form action="/buy" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="buy" name="buy" placeholder="Search Stocks" type="text" required>
+            </div>
+            <button id="submit" class="btn btn-primary" type="submit">Buy</button>
+        </form>
+
+    {% endif %}
+{% endblock %}
